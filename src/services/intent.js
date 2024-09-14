@@ -4,7 +4,7 @@ import {
     ISandbox,
     IStrategyService,
     IUseCaseService,
-  } from '../../interfaces.js';
+  } from '../../interfaces/local.js';
   import { SystemEvent, Events } from '../events.js';
   
   /**

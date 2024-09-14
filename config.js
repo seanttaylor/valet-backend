@@ -5,6 +5,7 @@ export const config = {
     },
     vars: {
       SUPABASE_URL: process.env.SUPABASE_URL,
+      UBER_API_URL: process.env.UBER_API_URL
     },
     subscriptions: {
       completed_strategy_executions: {

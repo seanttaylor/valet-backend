@@ -7,7 +7,7 @@ import {
   IDataAccessLayer,
   IStrategyService,
   IEvent,
-} from './interfaces.js';
+} from './interfaces/local.js';
 import { Sandbox } from './src/sandbox.js';
 import { SystemEvent, Events } from './src/events.js';
 

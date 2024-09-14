@@ -2,7 +2,7 @@ import {
   ISandbox,
   IUseCaseStrategy,
   IDataAccessLayer,
-} from '../../../interfaces.js';
+} from '../../../interfaces/local.js';
 import { UberStrategy } from './uber-strategy.js';
 
 /**

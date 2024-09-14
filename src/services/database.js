@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
 /******** LOCAL DEPENDENCIES ********/
-import { ISandbox } from '../../interfaces.js';
+import { ISandbox } from '../../interfaces/local.js';
 import { SystemEvent, Events } from '../events.js';
 import { config } from '../../config.js';
 

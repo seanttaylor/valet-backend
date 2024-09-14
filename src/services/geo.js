@@ -1,5 +1,5 @@
 /******** LOCAL DEPENDENCIES ********/
-import { ISandbox, IGeoCodeResponse } from '../../interfaces.js';
+import { ISandbox, IGeoCodeResponse } from '../../interfaces/local.js';
 import { config } from '../../config.js';
 
 export class GeoLocation {
