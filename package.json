@@ -3,10 +3,11 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-      "@supabase/supabase-js": "2.45.1",
-      "events": "3.3.0",
-      "firebase-auto-ids": "^1.1.0",
-      "timers": "0.1.1"
+        "@supabase/supabase-js": "2.45.1",
+        "events": "3.3.0",
+        "figlet": "^1.7.0",
+        "firebase-auto-ids": "^1.1.0",
+        "timers": "0.1.1"
     },
     "type": "module"
 }

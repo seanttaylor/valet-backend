@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { promisify } from 'util';
 
 /******** LOCAL DEPENDENCIES ********/
 import { StrategyService } from './src/services/strategy/index.js';
@@ -14,6 +15,11 @@ const SUPABASE_PUBLIC_ANON_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0Y3Nua2luemJtYXhvY2FuYW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwMDE4MDgsImV4cCI6MjAzOTU3NzgwOH0.eXCbj4yKnAwyMrtWWNwiIe4XQPjjEF1r3qWipCzGYqM';
 const SUPABASE_URL = 'https://ttcsnkinzbmaxocanaoa.supabase.co';
 const EVENT_SOURCE = 'com.valet.backend';
+const APP_NAME = 'valet';
+const APP_VERSION = '0.0.1';
+
+const figletize = promisify(figlet);
+const banner = await figletize(`${APP_NAME} v${APP_VERSION}`);
 
 const SUBSCRIPTION_CONFIG = {
   intent_messages: {
