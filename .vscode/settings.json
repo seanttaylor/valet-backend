@@ -1,7 +1,7 @@
 {
     "editor.fontSize": 18,
     "terminal.integrated.fontSize": 18,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
     /**
      * Controls whether suggestions should be accepted on commit characters.
      * For example, in JavaScript, the semi-colon (;) can be a commit character that accepts a suggestion and types that character.
@@ -289,7 +289,7 @@
      * The number of spaces a tab is equal to. This setting is overridden based
      * on the file contents when 'editor.detectIndentation' is on.
      */
-    // "editor.tabSize": 2,
+    "editor.tabSize": 2,
     /**
      * Inserting and deleting whitespace follows tab stops.
      * Defaults to true.

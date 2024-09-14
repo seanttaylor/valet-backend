@@ -17,6 +17,7 @@ import { UseCaseService } from './src/services/use-case/index.js';
 
 import { DataAccessLayer } from './src/services/database.js';
 import { IntentService } from './src/services/intent.js';
+import { GeoLocation } from './src/services/geo.js';
 
 /******** UTILITIES ********/
 import { once } from './src/utils/once.js';
@@ -35,6 +36,8 @@ Sandbox.modules.of('DataAccessLayer', DataAccessLayer);
 Sandbox.modules.of('IntentService', IntentService);
 Sandbox.modules.of('UseCaseService', UseCaseService);
 
+Sandbox.modules.of('GeoLocation', GeoLocation);
+
 /**
  * @typedef {Object} DependentServices
  * @property {IDataAccessLayer} DataAccessLayer
@@ -42,7 +45,7 @@ Sandbox.modules.of('UseCaseService', UseCaseService);
  */
 
 const mySandbox = new Sandbox(
-  ['IntentService', 'DataAccessLayer', 'StrategyService', 'UseCaseService'],
+  ['IntentService', 'DataAccessLayer', 'StrategyService', 'UseCaseService', 'GeoLocation'],
   /**
    * @param {ISandbox & { my: DependentServices }} box
    */

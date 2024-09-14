@@ -1,10 +1,10 @@
 export const config = {
     keys: {
-      SUPABASE_PUBLIC_ANON_KEY:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0Y3Nua2luemJtYXhvY2FuYW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwMDE4MDgsImV4cCI6MjAzOTU3NzgwOH0.eXCbj4yKnAwyMrtWWNwiIe4XQPjjEF1r3qWipCzGYqM',
+      SUPABASE_PUBLIC_ANON_KEY: process.env.SUPABASE_PUBLIC_ANON_KEY,
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
     },
     vars: {
-      SUPABASE_URL: 'https://ttcsnkinzbmaxocanaoa.supabase.co',
+      SUPABASE_URL: process.env.SUPABASE_URL,
     },
     subscriptions: {
       completed_strategy_executions: {

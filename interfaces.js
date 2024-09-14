@@ -84,14 +84,20 @@ export const ISandbox = Object.freeze({
  */
 
 /**
- * @typedef {object} IIntentSpecification
+ * @type {IntentMessageContext}
+ * @description a configuration object containing user and location data pertinent to the request
+ */
+export const IIntentMessageContext = Object.freeze({});
+
+/**
+ * @typedef {object} IntentSpecification
  * @property {IntentMessageContext} context
  * @property {String} domain
  * @property {String} reply_id
  */
 
 /**
- * @type {IIntentSpecification}
+ * @type {IntentSpecification}
  * @description a configuration object containing all data related to a specified request
  */
 export const IIntentSpecification = Object.freeze({});
@@ -139,3 +145,71 @@ export const IUseCaseService = Object.freeze({});
  * @description - API for all data access regardless of implementation
  */
 export const IDataAccessLayer = Object.freeze({});
+
+/**
+ * @typedef {object} GeoLocation
+ * @property {function(): Promise<object>} getCoordinatesFromAddress - returns latitude and longitude for a plain text address
+ */
+
+/**
+ * @type {GeoLocation}
+ * @description - API for all data access regardless of implementation
+ */
+export const IGeoLocation = Object.freeze({});
+
+
+// Google Maps Geocode Request Response
+
+/**
+ * @typedef {Object} AddressComponent
+ * @property {string} long_name - The full text description or name of the address component.
+ * @property {string} short_name - An abbreviated textual name for the address component.
+ * @property {string[]} types - An array indicating the type of the address component.
+ */
+
+/**
+ * @typedef {Object} Location
+ * @property {number} lat - Latitude of the location.
+ * @property {number} lng - Longitude of the location.
+ */
+
+/**
+ * @typedef {Object} Viewport
+ * @property {Location} northeast - The northeast corner of the viewport bounding box.
+ * @property {Location} southwest - The southwest corner of the viewport bounding box.
+ */
+
+/**
+ * @typedef {Object} Geometry
+ * @property {Location} location - The geocoded latitude and longitude value.
+ * @property {string} location_type - Location type returned by the Geocoder.
+ * @property {Viewport} viewport - The recommended viewport for displaying the returned result.
+ */
+
+/**
+ * @typedef {Object} PlusCode
+ * @property {string} compound_code - A short code representing a location within a city.
+ * @property {string} global_code - A code representing a location anywhere on the globe.
+ */
+
+/**
+ * @typedef {Object} Result
+ * @property {AddressComponent[]} address_components - An array of objects containing address component information.
+ * @property {string} formatted_address - The human-readable address of this location.
+ * @property {Geometry} geometry - More detailed information about the location's geometry.
+ * @property {string} place_id - A unique identifier for this place.
+ * @property {PlusCode} plus_code - An encoded location reference, derived from latitude and longitude.
+ * @property {string[]} types - An array indicating the type of the address component.
+ */
+
+/**
+ * @typedef {Object} GeoCodeResponse
+ * @property {Result[]} results - An array containing the geocoding results.
+ * @property {string} status - The status of the geocode request.
+ */
+
+/**
+ * @type {GeoCodeResponse}
+ * @description - API for all data access regardless of implementation
+ */
+export const IGeoCodeResponse = Object.freeze({});

@@ -33,7 +33,7 @@ export class StrategyService {
    * @returns {IUseCaseStrategy}
    */
   async getStrategyByDomain(domain) {
-    return new UberStrategy();
+    return new UberStrategy(this.#sandbox);
   }
 
   /**
