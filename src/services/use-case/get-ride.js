@@ -1,7 +1,7 @@
 import { IEventEmitter } from '../../../interfaces/event-emitter.js';
 
 /**
- *
+ * Use case for requesting a ride via ride hailing service
  */
 export class GetRideUseCase {
   #EVENT_SOURCE = 'com.beepboop.use_cases.get_ride';
@@ -24,6 +24,7 @@ export class GetRideUseCase {
   }
 
   /**
+   * Begin servicing a use case by executing the associated strategy
    * @param {Object} context
    */
   async run(context) {

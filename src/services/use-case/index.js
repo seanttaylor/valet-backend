@@ -22,6 +22,7 @@ export class UseCaseService {
     }
   
     /**
+     * Given a specified domain (e.g. mobility.get_ride) returns a list of associated use cases
      * @param {String} domain
      * @returns {UseCase[]}
      */

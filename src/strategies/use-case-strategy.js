@@ -1,5 +1,5 @@
 /**
- *
+ * Abstract class for defining strategies associated with use cases 
  */
 export class UseCaseStrategy {
     /**

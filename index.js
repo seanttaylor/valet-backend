@@ -7,14 +7,16 @@ import { IIntentMessageContext } from './interfaces/intent-message-payload.js';
 
 /******** UTILITIES ********/
 import { once } from './src/utils/once.js';
-import { EventEmitter } from './event-emitter.js';
+import { EventEmitter, Events } from './event-emitter.js';
 import { testIntentMessage } from './template.js';
 
-const SUPABASE_PUBLIC_ANON_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0Y3Nua2luemJtYXhvY2FuYW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwMDE4MDgsImV4cCI6MjAzOTU3NzgwOH0.eXCbj4yKnAwyMrtWWNwiIe4XQPjjEF1r3qWipCzGYqM';
-const SUPABASE_URL = 'https://ttcsnkinzbmaxocanaoa.supabase.co';
+const SUPABASE_PUBLIC_ANON_KEY = process.env.SUPABASE_PUBLIC_ANON_KEY;
+const SUPABASE_URL = process.env.SUPABASE_URL;
 const EVENT_SOURCE = 'com.valet.backend';
 
+/**
+ * Configuration for subscriptions to realtime table updates via Supabase
+ */
 const SUBSCRIPTION_CONFIG = {
   intent_messages: {
     event: 'INSERT',
@@ -36,20 +38,22 @@ const eventEmitter = new EventEmitter();
 const useCaseService = new UseCaseService(eventEmitter);
 
 eventEmitter.on(
-  'evt.use_cases.strategy_execution_started',
+  Events.EXECUTION_STARTED,
   (event) => {
     console.log(event);
   },
-  { subscriber: SUBSCRIBER_ID }
+  { subscriber: EVENT_SOURCE }
 );
 
 eventEmitter.on(
-  'evt.use_cases.strategy_execution_completed',
+  Events.EXECUTION_COMPLETED,
   onStrategyExecutionCompleted,
-  { subscriber: SUBSCRIBER_ID }
+  { subscriber: EVENT_SOURCE }
 );
 
 /**
+ * Fires on completed execution of a strategy; logs the details of
+ * the execution to the database
  * @param {Object} event
  * @param {Object} event.header
  * @param {Object} event.paylaod
@@ -78,6 +82,8 @@ async function onIntentReplyMessageReceived(payload) {
 }
 
 /**
+ * Fires when an intent message has been inserted into the database; bootstraps
+ * the strategy execution process after a domain and use case is identified
  * @param {Object} message
  * @param {Object} message.header
  * @param {Object} message.payload
@@ -94,7 +100,7 @@ async function onIntentMessageReceived({ header, payload }) {
   const result = await currentUseCase.run(context);
 
   eventEmitter.emit(
-    'evt.use_cases.strategy_execution_completed',
+    Events.EXECUTION_COMPLETED,
     {
       name: strategy.name,
       domain,

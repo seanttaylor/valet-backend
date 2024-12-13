@@ -1,3 +1,6 @@
+/**
+ * Stub response from the Uber API
+ */
 export const getProducts = {
     products: [
       {
