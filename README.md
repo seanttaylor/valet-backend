@@ -29,7 +29,7 @@ We used Expo's [Snack](https://snack.expo.dev/) framework to quickly scaffold a 
 ### System Overview
 The diagram of our application is below. You can find a detailed discussion of this approach to designing agentic apps [here](https://dev.to/agustus_gloop/stop-hallucinating-apis-are-the-missing-link-for-reliable-agentic-applications-243e-temp-slug-5190313?preview=428626963d5b19e8dea28779b785bb6372bec2fde7144f22aa780ffd3900f1829b3e5a7c7932d78d301950b35e269e57ad0f9e3fec7cbc488b4d4b98).
 
-![The demo app diagram](https://github.com/seanttaylor/valet/blob/master/docs/img/valet-system-diagram.png?raw=true)
+![The demo app diagram](https://github.com/seanttaylor/valet-backend/blob/master/docs/img/valet-system-diagram.png?raw=true)
 
 #### Demo tldr;
 We stitch a structured API payload from a natural language query from the ChatGPT API, which enrich with gelocation and user data from our demo app. 
