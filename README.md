@@ -12,6 +12,8 @@ The beauty of use cases is that an AI agent can be extended by making it aware o
 
 ## Architectural Notes
 
+Since our framework of choice [Expo Snack]() does not permit sharing projects directly from the platform the mobile frontend code is housed in /dist/valet.zip. It cannot be run in this form but it does offer insight into how the frontend is put together.
+
 ### Database as Message Bus
 In the interest of saving time during development we chose to use our Supabase database as a message bus to eliminate the need for an API interface for our mobile frontend. 
 
@@ -71,13 +73,6 @@ We send the intent specification to our backend which identifies the strategy fo
 Our demo app implements requesting a ride from Uber.
 
 Once the Uber API responds to our request, we create a reply message for the frontend, that message is interpreted by ChatGPT and transformed into natural language. The natural language response is threaded through a text-to-speech module and the audio is played the demo device's speaker. 
-
-<!-- Embed saved Snack -->
-<div data-snack-id="@seanttaylor/valet" data-snack-platform="ios" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#0C0D0E;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
-<script async src="https://snack.expo.dev/embed.js"></script>
-
-<!-- Load the embed.js script -->
-<script async src="https://snack.expo.dev/embed.js"></script>
 
 
 
