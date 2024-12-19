@@ -112,6 +112,12 @@ async function onIntentMessageReceived({ header, payload }) {
   );
 }
 
+/**
+ * The subscription to the `intent_messages` table below bootstraps the
+ * appplication; the listener can be triggered by entering a new row into
+ * the `intent_messages` table via the Supabase SDK or via the Supabase
+ * REST API
+ */
 (async (client) => {
   try {
     once(() => {
