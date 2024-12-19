@@ -12,7 +12,7 @@ The beauty of use cases is that an AI agent can be extended by making it aware o
 
 ## Architectural Notes
 
-Since our framework of choice [Expo Snack]() does not permit sharing projects directly from the platform the mobile frontend code is housed in /dist/valet.zip. It cannot be run in this form but it does offer insight into how the frontend is put together.
+Since our framework of choice [Expo Snack](https://snack.expo.dev/) does not permit sharing projects directly from the platform the mobile frontend code is housed in /dist/valet.zip. It cannot be run in this form but it does offer insight into how the frontend is put together.
 
 ### Database as Message Bus
 In the interest of saving time during development we chose to use our Supabase database as a message bus to eliminate the need for an API interface for our mobile frontend. 
