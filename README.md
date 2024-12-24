@@ -6,7 +6,7 @@ Valet is a protoype mobile app for a general purpose AI agent. This repository i
 
 The idea of use cases is the centerpiece of our design approach. For a general purpose AI agent to be "good enough" we "only" need to address a number of major use cases. 
 
-In the same way that most people use the same handful apps on their pohne the overwhelming majority of time, an AI agent really only needs to satisfy a limited number of _types_ of use case. This number may indeed be large--but it isn't even close to infinite.
+In the same way that most people use the same handful apps on their phone the overwhelming majority of time, an AI agent really only needs to satisfy a limited number of _types_ of use case. This number may indeed be large--but it isn't even close to infinite.
 
 The beauty of use cases is that an AI agent can be extended by making it aware of a new use case. For us, a use case is a defined task or set of tasks an agent can accomplish on behalf of its user. Our demo app features a single use case: getting a ride estimate for an Uber. 
 
