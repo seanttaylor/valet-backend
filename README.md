@@ -34,7 +34,7 @@ The diagram of our application is below. You can find a detailed discussion of t
 ![The demo app diagram](https://github.com/seanttaylor/valet-backend/blob/master/docs/img/valet-system-diagram.png?raw=true)
 
 #### Demo tldr;
-We stitch a structured API payload from a natural language query from the ChatGPT API, which enrich with gelocation and user data from our demo app. 
+We stitch a structured API payload from a natural language query from the ChatGPT API, which we enrich with gelocation and user data from our demo app. 
 
 Using prompt engineering we trained ChatGPT produce what we call **intent specifications** from a natural language request which we generate via speech-to-text. An intent specification looks like this: 
 ```javascript
